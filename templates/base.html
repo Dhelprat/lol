@@ -37,12 +37,12 @@
 
                     <ul class="nav">
                         {% for form in ['1','2','3','4','5','6','7','8','9','10','11'] %}
-                             {% if form == grade %}
-                             <li class="nav-klass-active"><a>{{form.__str__() + " класс"}}</a>
-                             {% else %}
-                             <li class="nav-klass-hidden"><a>{{form.__str__() + " класс"}}</a>
-                             {% endif %}
-                                <ul>
+                            <li><a>{{form.__str__() + " класс"}}</a>
+                                {% if form == grade %}
+                                    <ul class="nav-klass-active">
+                                {% else %}
+                                    <ul class="nav-klass-hidden">
+                                {% endif %}
                                     {% for subject in subjects %}
                                         {% if Books.query.filter_by(subject=subject, grade=form).first() %}
                                             <li><a href="{{ url_for('table_to_books', grade=form.__str__()+"-klass", subject=subject) }}">{{subjects[subject][-1]}}</a>

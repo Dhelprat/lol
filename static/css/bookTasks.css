@@ -1,3 +1,7 @@
+.tasks {
+    border: 1px solid red;
+    width: 100%;
+}
 
 #bookTitle {
     padding: 6px 10px 6px 10px;
@@ -11,6 +15,14 @@
 .description {
     color: dimgray;
     font-weight: 400;
+    text-align: justify;
+}
+
+.mini-description {
+    color: dimgray;
+    font-weight: 400;
+    display: none;
+    text-align: justify;
 }
 
 .bookDescriptionSecond {
@@ -38,7 +50,7 @@
     flex-flow: row wrap;
     justify-content: space-between;
     align-content: stretch;
-    margin-top: 20px;
+    margin: 20px -10px 0 0;
 }
 
 .path {
@@ -75,4 +87,14 @@
 .test:hover {
     background: #7400E8;
     color: white;
+}
+
+@media screen and (max-width: 755px) {
+    .description {
+        display: none;
+    }
+
+    .mini-description {
+        display: block;
+    }
 }

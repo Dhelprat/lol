@@ -1,3 +1,8 @@
+.books {
+    border: 1px solid red;
+    width: 100%;
+}
+
 #books-list {
     padding-inline-start: 0;
     height: max-content;

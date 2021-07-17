@@ -9,41 +9,47 @@
 
 {% block content %}
     {{ super() }}
+    <div class="tasks">
+        <p id="bookTitle">{{page_title}}</p>
 
-    <p id="bookTitle">{{page_title}}</p>
+        <p class="text"><a class="path" href="/">Главная</a>/<a class="path" href={{ url[:url.rfind('/')] }}>{{ subject + " " + grade + " класс "}}</a>/<a class="path" href={{ url }}>{{ book }}</a></p>
 
-    <p class="text"><a class="path" href="/">Главная</a>/<a class="path" href={{ url[:url.rfind('/')] }}>{{ subject + " " + grade + " класс "}}</a>/<a class="path" href={{ url }}>{{ book }}</a></p>
+        <img id="bookCover" alt="{{ book_info.id_ }}" src="{{ url_for('static', filename='img/covers/') }}{{ book_info.id_ }}.jpg">
 
-    <img id="bookCover" alt="{{ book_info.id_ }}" src="{{ url_for('static', filename='img/covers/') }}{{ book_info.id_ }}.jpg">
+        <div class="description">
+            <p><label class="bookDescriptionFirst"> {{ ' '.join(book_info.description.split()[:115]) }}<label class="dots">...</label> </label>
+            <label class="bookDescriptionSecond"> {{ ' '.join(book_info.description.split()[115:]) }} </label>
+            <b class="spoiler-title">🡆</b>
+        </div>
+        <div class="mini-description">
+            <p><label class="bookDescriptionFirst"> {{ ' '.join(book_info.description.split()[:80]) }}<label class="dots">...</label> </label>
+            <label class="bookDescriptionSecond"> {{ ' '.join(book_info.description.split()[80:]) }} </label>
+            <b class="spoiler-title">🡆</b>
+        </div>
 
-    <div class="description">
-        <p><label class="bookDescriptionFirst"> {{ ' '.join(book_info.description.split()[:100]) }}<label class="dots">...</label> </label>
-        <label class="bookDescriptionSecond"> {{ ' '.join(book_info.description.split()[100:]) }} </label>
-        <b class="spoiler-title">🡆</b>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                $('.spoiler-title').click(function(){
+                    $(this).toggleClass('opened').toggleClass('closed').next().toggle();
+                    if($(this).hasClass('opened')) {
+                        $(this).html('🡄');
+                        $('.bookDescriptionSecond').show();
+                        $('.dots').hide();
+                    }
+                    else {
+                        $(this).html('🡆');
+                        $('.bookDescriptionSecond').hide();
+                        $('.dots').show();
+                    }
+                });
+                });
+            </script>
 
-        <script type="text/javascript">
-            $(document).ready(function(){
-            $('.spoiler-title').click(function(){
-                $(this).toggleClass('opened').toggleClass('closed').next().toggle();
-                if($(this).hasClass('opened')) {
-                    $(this).html('🡄');
-                    $('.bookDescriptionSecond').show();
-                    $('.dots').hide();
-                }
-                else {
-                    $(this).html('🡆');
-                    $('.bookDescriptionSecond').hide();
-                    $('.dots').show();
-                }
-            });
-            });
-        </script>
-
+        <div class="ttt">
+            {% for i in range(1, 55) %}
+                <a class="test" href={{ url_for('show_task', grade=book_info.grade+"-klass", subject=book_info.subject, book=book_info.id_, task=i) }}><span class="pt">{{i}}</span></a>
+            {% endfor %}
+        </div>
     </div>
 
-    <div class="ttt">
-        {% for i in range(1, 55) %}
-            <a class="test" href={{ url_for('show_task', grade=book_info.grade+"-klass", subject=book_info.subject, book=book_info.id_, task=i) }}><span class="pt">{{i}}</span></a>
-        {% endfor %}
-    </div>
 {% endblock %}

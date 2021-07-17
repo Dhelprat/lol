@@ -14,6 +14,7 @@ body {
     color: #7400E8;
 
     text-align: center;
+    margin: auto;
 }
 
 html {
@@ -32,7 +33,7 @@ html {
     background: white;
 
     z-index: 3;
-    width: 90%;
+    width: 96%;
 
     margin-top: 20px;
     margin-bottom: 20px;
@@ -215,6 +216,14 @@ ul.nav li > ul > li > a:hover {
     .logo {
         width: 24%;
     }
+
+    .path {
+        font-size: 90%;
+    }
+
+    .text {
+        font-size: 90%;
+    }
 }
 
 @media screen and (max-width: 1165px) {
@@ -249,7 +258,6 @@ ul.nav li > ul > li > a:hover {
     header {
         width: 97%;
     }
-
 }
 
 @media screen and (max-width: 755px) {
@@ -263,5 +271,13 @@ ul.nav li > ul > li > a:hover {
 
     header {
         width: 96%;
+    }
+
+    .text {
+        font-size: 80%;
+    }
+
+    .path {
+        font-size: 80%;
     }
 }

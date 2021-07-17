@@ -1,31 +1,23 @@
 .task-img {
     width: 100%;
-<<<<<<< HEAD
-=======
-    border: 1px solid red;
->>>>>>> cbf4fcae9304d629bfe1879c85b6562b2b15ada4
 }
 
 #bookTitle {
     padding: 6px 10px 6px 10px;
     border-radius: 4px;
     margin: 0 0 16px 0;
-<<<<<<< HEAD
     font-size: 18px;
-=======
     font-size: 100%;
->>>>>>> cbf4fcae9304d629bfe1879c85b6562b2b15ada4
     box-shadow: 0 0 10px rgba(0,0,0,0.22);
     text-align: center;
 }
 
 .all {
     text-align: center;
+    width: 100%;
+    border: 1px solid red;
 }
 
-<<<<<<< HEAD
-.button {
-=======
 .path {
     color: #7400E8;
     font-size: 14px;
@@ -36,42 +28,34 @@
     text-align: left;
     font-weight: 400;
 
+}
+
+.path {
+    color: #7400E8;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.text {
+    text-align: left;
+    font-weight: 400;
+
+    font-size: 14px;
+    font-family: Rubik;
+    cursor: pointer;
 }
 
 .button_mini {
->>>>>>> cbf4fcae9304d629bfe1879c85b6562b2b15ada4
-    margin-right: 6px;
-    font-weight: 900;
-    background-color: white;
+    margin-right: 3px;
     border: 3px solid #7400E8;
     color: #7400E8;
-    padding: 6px 10px;
+    padding: 0 5px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    border-radius: 4px;
-<<<<<<< HEAD
-    font-size: 15px;
-    font-family: Rubik;
-    cursor: pointer;
-}
-
-.path {
-    color: #7400E8;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.text {
-    text-align: left;
-    font-weight: 400;
-
-=======
-    font-size: 14px;
-    font-family: Rubik;
-    cursor: pointer;
-
     display: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .button_mini:hover {
@@ -81,8 +65,6 @@
 
 .button {
     margin-right: 6px;
-    font-weight: 900;
-    background-color: white;
     border: 3px solid #7400E8;
     color: #7400E8;
     padding: 6px 10px;
@@ -91,19 +73,15 @@
     display: inline-block;
     border-radius: 4px;
     font-size: 14px;
-    font-family: Rubik;
     cursor: pointer;
->>>>>>> cbf4fcae9304d629bfe1879c85b6562b2b15ada4
 }
 
 .button:hover {
     background-color: #7400E8;
     color: white;
-<<<<<<< HEAD
-=======
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 755px) {
     .left-column {
         display: none;
     }
@@ -116,10 +94,6 @@
         font-size: 80%;
     }
 
-    .text {
-        font-size:
-    }
-
     .button {
         display: none;
     }
@@ -127,6 +101,4 @@
     .button_mini {
         display: inline-block;
     }
-
->>>>>>> cbf4fcae9304d629bfe1879c85b6562b2b15ada4
 }
